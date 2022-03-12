@@ -11,23 +11,6 @@ var taskFormHandler = function (event) {
     event.preventDefault();
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
-<<<<<<< HEAD
-    //  package up data as an object
-    var taskDataObj = {
-        name: taskNameInput,
-        type: taskTypeInput
-    };
-
-    // send it as an argument to createTaskEl
-    createTaskEl(taskDataObj);
-
-    // check if input values are emtpy strings
-    if (!taskNameInput || !taskTypeInput) {
-        alert("You need to fill out the task form!");
-        return false;
-    }
-    formEl.reset();
-=======
     // check if input values are emtpy strings
     if (!taskNameInput || !taskTypeInput) {
         alert("You need to fill out the task form!");
@@ -58,7 +41,6 @@ var taskFormHandler = function (event) {
         // send it as an argument to createTaskEl
         createTaskEl(taskDataObj);
     }
->>>>>>> feature/updating-tasks
 };
 
 var createTaskEl = function (taskDataObj) {
@@ -73,13 +55,10 @@ var createTaskEl = function (taskDataObj) {
     taskInfoEl.className = "task-info";
     taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class= 'task-type'>" + taskDataObj.type + "</span>";
     listItemEl.appendChild(taskInfoEl);
-<<<<<<< HEAD
-=======
 
     // create task actions (buttons and select) for task
     var taskActionsEl = createTaskActions(taskIdCounter);
     listItemEl.appendChild(taskActionsEl);
->>>>>>> feature/updating-tasks
     // add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
 
@@ -130,9 +109,6 @@ var createTaskActions = function (taskId) {
     return actionContainerEl;
 };
 
-<<<<<<< HEAD
-formEl.addEventListener("submit", taskFormHandler);
-=======
 var completeEditTask = function (taskName, taskType, taskId) {
     // find the matching task list iten
     var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
@@ -227,4 +203,3 @@ pageContentEl.addEventListener("click", taskButtonHandler)
 
 //  call for changing the status
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
->>>>>>> feature/updating-tasks
